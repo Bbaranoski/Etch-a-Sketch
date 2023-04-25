@@ -1,6 +1,8 @@
 const gridBase = document.querySelector('.container');
 
-for (i = 0; i < 16; i++){
+gridCount = 32;
+
+for (i = 0; i < gridCount; i++){
 
     gridHorizontal = document.createElement('div');
 
@@ -8,12 +10,10 @@ for (i = 0; i < 16; i++){
 
     gridBase.appendChild(gridHorizontal);
 
-    for (e = 0; e < 16; e++){
+    for (e = 0; e < gridCount; e++){
 
         gridVertical = document.createElement('div');
-    
-        gridVertical.textContent = 'test';
-    
+
         gridHorizontal.appendChild(gridVertical);
     
     }
@@ -26,7 +26,7 @@ grid.forEach((div) => {
 
     div.addEventListener('mouseover', () => {
 
-        div.style.color = 'red';
+        div.style.backgroundColor = 'violet';
 
     });
 
