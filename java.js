@@ -1,7 +1,21 @@
-const first = document.querySelector('.container');
+const gridBase = document.querySelector('.container');
 
-const gridFirst = document.createElement('div');
+for (i = 0; i < 16; i++){
 
-gridFirst.style.backgroundColor = 'red';
+    gridHorizontal = document.createElement('div');
 
-first.appendChild(gridFirst);
+    gridHorizontal.textContent = 'test';
+
+    gridBase.appendChild(gridHorizontal);
+
+}
+
+for (i = 1; i < 16; i++){
+
+    gridVertical = document.createElement('div');
+
+    gridVertical.textContent = 'gai';
+
+    gridHorizontal.appendChild(gridVertical);
+
+}
