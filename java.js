@@ -1,8 +1,10 @@
 const gridBase = document.querySelector('.container');
 
-gridCount = 32;
+gridCount = 10;
 
-for (i = 0; i < gridCount; i++){
+function createGrid(num){
+    
+    for (i = 0; i < num; i++){
 
     gridHorizontal = document.createElement('div');
 
@@ -10,7 +12,7 @@ for (i = 0; i < gridCount; i++){
 
     gridBase.appendChild(gridHorizontal);
 
-    for (e = 0; e < gridCount; e++){
+    for (e = 0; e < num; e++){
 
         gridVertical = document.createElement('div');
 
@@ -20,15 +22,41 @@ for (i = 0; i < gridCount; i++){
 
 }
 
-const grid = document.querySelectorAll('.horizontal div');
+}
 
-grid.forEach((div) => {
 
-    div.addEventListener('mouseover', () => {
+const gridChange = document.querySelector('button');
 
-        div.style.backgroundColor = 'violet';
+gridChange.textContent = 'Change Grid Block Amount';
 
+gridChange.addEventListener('click', () => {
+
+    gridCount = prompt("How Much Blocks do You Want?"); 
+
+    removeAllChild(gridBase);
+
+    createGrid(gridCount);
+
+    const grid = document.querySelectorAll('.horizontal div');
+
+    grid.forEach((div) => {
+
+        div.addEventListener('mouseover', () => {
+    
+            div.style.backgroundColor = 'violet';
+    
+        });
+    
     });
 
 });
 
+function removeAllChild(parent){
+
+    while(parent.firstChild){
+
+        parent.removeChild(parent.firstElementChild);
+
+    }
+
+}
