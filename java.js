@@ -1,7 +1,5 @@
 const gridBase = document.querySelector('.container');
 
-gridCount = 10;
-
 function createGrid(num){
     
     for (i = 0; i < num; i++){
@@ -31,23 +29,29 @@ gridChange.textContent = 'Change Grid Block Amount';
 
 gridChange.addEventListener('click', () => {
 
-    gridCount = prompt("How Much Blocks do You Want?"); 
+    gridCount = prompt("How Much Blocks do You Want?");
 
-    removeAllChild(gridBase);
-
-    createGrid(gridCount);
-
-    const grid = document.querySelectorAll('.horizontal div');
-
-    grid.forEach((div) => {
-
-        div.addEventListener('mouseover', () => {
+    if(gridCount>100){gridCount=100}
     
-            div.style.backgroundColor = 'violet';
+    if(gridCount !== NaN){
+
+        removeAllChild(gridBase);
+
+        createGrid(gridCount);
+
+        const grid = document.querySelectorAll('.horizontal div');
+
+        grid.forEach((div) => {
+
+            div.addEventListener('mouseover', () => {
+    
+                div.style.backgroundColor = 'violet';
+    
+            });
     
         });
-    
-    });
+
+    }  
 
 });
 
