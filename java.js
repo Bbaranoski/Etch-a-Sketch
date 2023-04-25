@@ -4,18 +4,31 @@ for (i = 0; i < 16; i++){
 
     gridHorizontal = document.createElement('div');
 
-    gridHorizontal.textContent = 'test';
+    gridHorizontal.classList.add('horizontal')
 
     gridBase.appendChild(gridHorizontal);
 
+    for (e = 0; e < 16; e++){
+
+        gridVertical = document.createElement('div');
+    
+        gridVertical.textContent = 'test';
+    
+        gridHorizontal.appendChild(gridVertical);
+    
+    }
+
 }
 
-for (i = 1; i < 16; i++){
+const grid = document.querySelectorAll('.horizontal div');
 
-    gridVertical = document.createElement('div');
+grid.forEach((div) => {
 
-    gridVertical.textContent = 'gai';
+    div.addEventListener('mouseover', () => {
 
-    gridHorizontal.appendChild(gridVertical);
+        div.style.color = 'red';
 
-}
+    });
+
+});
+
