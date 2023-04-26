@@ -32,8 +32,6 @@ gridChange.addEventListener('click', () => {
     gridCount = prompt("How Much Blocks do You Want?");
 
     if(gridCount>100){gridCount=100}
-    
-    if(gridCount !== NaN){
 
         removeAllChild(gridBase);
 
@@ -50,10 +48,15 @@ gridChange.addEventListener('click', () => {
                 div.style.backgroundColor = "#" + randomColor;
     
             });
+
+            div.addEventListener('mouseout', () => {
+
+                div.style.backgroundColor = "white";
+    
+            });
+    
     
         });
-
-    }  
 
 });
 
